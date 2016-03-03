@@ -11,6 +11,7 @@
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kwidth ((kScreenWidth - 50) / 3)
 
 #define kLeftLength 300
 

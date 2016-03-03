@@ -10,6 +10,8 @@
 #import "MainController.h"
 #import "LeftViewController.h"
 #import "SubWeatherController.h"
+#import "WaterfallViewController.h"
+#import "MainTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -32,11 +34,18 @@
     
     LeftViewController *left = [[LeftViewController alloc] init];
     
+    MainController *weatherMain = [[MainController alloc] initWithLeftViewController:left subViewControllers:subControllers];
+    
+    WaterfallViewController *waterfallController = [[WaterfallViewController alloc] init];
+    
+    MainTabBarController *tabBarController = [[MainTabBarController alloc] init];
+    tabBarController.viewControllers = @[weatherMain, waterfallController];
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     [self.window makeKeyAndVisible];
     
-    self.window.rootViewController = [[MainController alloc] initWithLeftViewController:left subViewControllers:subControllers];
+    self.window.rootViewController = tabBarController;
     
     // Override point for customization after application launch.
     return YES;
