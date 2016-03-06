@@ -11,8 +11,6 @@
 
 @interface LeftViewController : UIViewController<MainControllerChild>
 
-@property (nonatomic, copy)NSArray *citysWeather;
-
 @property (nonatomic, weak)MainController *mainController;
 
 @end

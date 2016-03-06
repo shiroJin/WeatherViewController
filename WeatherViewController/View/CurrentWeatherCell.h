@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TodayModel.h"
+#import "WeatherModel.h"
 
 @interface CurrentWeatherCell : UITableViewCell
 
-@property (nonatomic, strong) TodayModel *today;
+@property (nonatomic, strong) WeatherModel *weatherModel;
 
 @property (weak, nonatomic) IBOutlet UILabel *aqi;
 @property (weak, nonatomic) IBOutlet UILabel *date;

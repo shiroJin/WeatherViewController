@@ -1,20 +1,21 @@
+
 //
-//  MainTabBarController.m
+//  WeatherTabBarController.m
 //  WeatherViewController
 //
-//  Created by Macx on 16/3/3.
+//  Created by Macx on 16/3/5.
 //  Copyright © 2016年 jinquanbin. All rights reserved.
 //
 
-#import "MainTabBarController.h"
+#import "WeatherTabBarController.h"
 
-@interface MainTabBarController ()
+@interface WeatherTabBarController ()
 
 @property (nonatomic, strong)UIView *customBar;
 
 @end
 
-@implementation MainTabBarController
+@implementation WeatherTabBarController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
@@ -44,6 +45,14 @@
 - (void)click:(UIButton *)sender {
     NSInteger index = sender.tag;
     self.selectedIndex = index;
+}
+
+#pragma mark - MainControllerChild
+@synthesize mainController = _mainController;
+- (void)setMainController:(MainController *)mainController {
+    if (mainController) {
+        _mainController = mainController;
+    }
 }
 
 @end

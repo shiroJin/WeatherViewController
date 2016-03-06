@@ -10,6 +10,6 @@
 
 @interface CityTable : UITableView <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, copy)NSArray *citysWeather;
+@property (nonatomic, copy)NSDictionary *citysWeather;
 
 @end

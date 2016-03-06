@@ -27,12 +27,6 @@
     [self createCustomBar];
 }
 
-- (void)setCitysWeather:(NSArray *)citysWeather {
-    //返回的数组地址不变。。所以没多大用啊！
-    self.cityTableView.citysWeather = citysWeather;
-    [self.cityTableView reloadData];
-}
-
 - (void)createTableView {
     self.cityTableView = [[CityTable alloc] initWithFrame:CGRectMake(0, 64, kLeftLength, kScreenHeight - 64) style:UITableViewStylePlain];
     [self.view addSubview:self.cityTableView];
@@ -78,6 +72,11 @@
     if (_mainController != mainController) {
         _mainController = mainController;
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.cityTableView.citysWeather = [WeatherManager sharedManager].weatherDataDic;
+    [self.cityTableView reloadData];
 }
 
 @end

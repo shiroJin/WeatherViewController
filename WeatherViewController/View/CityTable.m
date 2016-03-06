@@ -8,6 +8,7 @@
 
 #import "CityTable.h"
 #import "CityCell.h"
+#import "CityModel.h"
 
 #define kCity @"cityCell"
 @implementation CityTable
@@ -24,15 +25,6 @@
     return self;
 }
 
-- (void)setCitysWeather:(NSArray *)citysWeather {
-    if (_citysWeather != citysWeather) {
-        _citysWeather = citysWeather;
-        
-        [self reloadData];
-    }
-}
-
-
 #pragma mark - Table View Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -45,12 +37,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CityCell *cell = [self dequeueReusableCellWithIdentifier:kCity forIndexPath:indexPath];
-    cell.weather = _citysWeather[indexPath.row];
+    cell.weather = [_citysWeather objectForKey:[NSString stringWithFormat:@"%ld",  indexPath.row]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //cell
+    //...
 }
 
 @end

@@ -17,16 +17,17 @@
 @end
 
 //mainController
-@class WeatherModel;
 @class LeftViewController;
+@class WeatherModel;
+@class WeatherTabBarController;
 
 @interface MainController : UIViewController
 
-@property (nonatomic, readonly, strong)UIViewController<MainControllerChild> *leftViewContrller;
+@property (nonatomic, readonly, strong)LeftViewController<MainControllerChild> *leftViewContrller;
 
 @property (nonatomic, readonly, strong)UIView *leftView;
 
-@property (nonatomic, strong)NSMutableArray *viewControllers;
+@property (nonatomic, readonly, strong)WeatherTabBarController *tabBarController;
 
 @property (nonatomic, readonly, strong)UIView *centerView;
 
@@ -34,7 +35,10 @@
 
 @property (nonatomic, strong)NSMutableArray *weatherData;
 
-- (instancetype)initWithLeftViewController:(UIViewController<MainControllerChild> *)leftViewController subViewControllers:(NSArray *)viewControllers;
+//初始化方法
+- (instancetype)initWithLeftViewController:(UIViewController<MainControllerChild> *)leftViewController centerViewController:(WeatherTabBarController<MainControllerChild> *)tabBarController;
+
+- (void)openLeftView;
 
 - (void)updateWeatherData:(WeatherModel *)weatherModel;
 

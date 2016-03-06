@@ -46,14 +46,10 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"选择城市");
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {    
     //update data
-    WeatherManager *weatherManager = [WeatherManager sharedManager];
-    NSString *cityId = ((CityModel *)self.cityModels[indexPath.row]).area_id;
-    [weatherManager updateData:cityId];
-    
+    //更新数据
+    [[WeatherManager sharedManager] updateData:((CityModel *)_cityModels[indexPath.row]).area_id];
     [self deselectRowAtIndexPath:indexPath animated:YES];
     [self.viewController dismissViewControllerAnimated:YES completion:NULL];
 }

@@ -7,31 +7,42 @@
 //
 
 #import "CurrentWeatherCell.h"
+#import "ForeCastView.h"
 
+@interface CurrentWeatherCell ()
+
+@property (nonatomic, strong)ForeCastView *forecastView;
+
+@end
 @implementation CurrentWeatherCell
 
 - (void)awakeFromNib {
     // Initialization code
+    _forecastView = [[ForeCastView alloc] initWithFrame:CGRectMake(kScreenWidth - 160, 150, 150, 100)];
+    _forecastView.backgroundColor = [UIColor clearColor];
+    [self.contentView addSubview:_forecastView];
+
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-//        self.backgroundColor = [UIColor grayColor];
+        
     }
     return self;
 }
 
-- (void)setToday:(TodayModel *)today {
-    if (_today != today) {
-        _today = today;
+- (void)setWeatherModel:(WeatherModel *)weatherModel {
+    if (_weatherModel != weatherModel) {
+        _weatherModel = weatherModel;
         
-        _aqi.text = _today.aqi;
-        _date.text = _today.date;
-        _type.text = _today.type;
-        _temp.text = _today.curTemp;
-        _fengli.text = [NSString stringWithFormat:@"风向：%@ 风力：%@", _today.fengxiang, _today.fengli];
+        _aqi.text = _weatherModel.today.aqi;
+        _date.text = _weatherModel.today.date;
+        _type.text = _weatherModel.today.type;
+        _temp.text = _weatherModel.today.curTemp;
+        _fengli.text = [NSString stringWithFormat:@"风向：%@ 风力：%@", _weatherModel.today.fengxiang, _weatherModel.today.fengli];
+        _forecastView.forecast = self.weatherModel.forecastArr[0];
     }
 }
 

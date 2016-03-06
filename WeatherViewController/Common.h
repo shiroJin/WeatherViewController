@@ -16,6 +16,7 @@
 #define kLeftLength 300
 
 #define kSearchCityURL @"http://apis.baidu.com/apistore/weatherservice/citylist"
+#define kRecentWeather @"http://apis.baidu.com/apistore/weatherservice/recentweathers"
 
 
 #endif /* Common_h */

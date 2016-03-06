@@ -82,23 +82,12 @@
     NSString *city = _textField.text;
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:city forKey:@"cityname"];
     
-    [WeatherManager request:kSearchCityURL params:params completionHandler:^(id  _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        [self parseData:data];
+    [[WeatherManager sharedManager] requestCity:kSearchCityURL params:params completionHandler:^(NSArray *arr) {
+        _citySearchReslut.cityModels = arr;
+        [_citySearchReslut reloadData];
     }];
 }
 
-- (void)parseData:(id)data {
-    if (data) {
-        NSDictionary *resultDic = [data objectForKey:@"retData"];
-        for (NSDictionary *dic in resultDic) {
-            CityModel *city = [[CityModel alloc] initContentWithDic:dic];
-            [self.cityModels addObject:city];
-        }
-        
-        _citySearchReslut.cityModels = self.cityModels;
-        [_citySearchReslut reloadData];
-    }
-}
 
 @synthesize cityModels = _cityModels;
 

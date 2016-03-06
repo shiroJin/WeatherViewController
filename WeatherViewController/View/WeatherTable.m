@@ -10,8 +10,11 @@
 #import "CurrentWeatherCell.h"
 #import "WeatherModel.h"
 #import "WXRefresh.h"
+#import "GraphCell.h"
 
 #define kToday @"todayCell"
+#define kGraph @"graphCell"
+
 @implementation WeatherTable
 
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style
@@ -19,10 +22,11 @@
     self = [super initWithFrame:frame style:style];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        [self registerNib:[UINib nibWithNibName:@"CurrentWeatherCell" bundle:nil] forCellReuseIdentifier:kToday];
         self.dataSource = self;
         self.delegate = self;
-    
+        
+        [self registerNib:[UINib nibWithNibName:@"CurrentWeatherCell" bundle:nil] forCellReuseIdentifier:kToday];
+        [self registerNib:[UINib nibWithNibName:@"GraphCell" bundle:nil] forCellReuseIdentifier:kGraph];
     }
     return self;
 }
@@ -30,7 +34,7 @@
 #pragma mark - TableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return 2;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -38,12 +42,18 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CurrentWeatherCell *cell = [self dequeueReusableCellWithIdentifier:kToday];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = [UIColor clearColor];
-    cell.today = _weatherModel.today;
-    
-    return cell;
+    if (indexPath.row == 0) {
+        CurrentWeatherCell *cell = [self dequeueReusableCellWithIdentifier:kToday];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.backgroundColor = [UIColor clearColor];
+        cell.weatherModel = _weatherModel;
+        return cell;
+    }
+    else {
+        GraphCell *graphCell = [self dequeueReusableCellWithIdentifier:kGraph forIndexPath:indexPath];
+        graphCell.weatherModel = self.weatherModel;
+        return graphCell;
+    }
 }
 
 //set model

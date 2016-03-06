@@ -9,9 +9,9 @@
 #import "AppDelegate.h"
 #import "MainController.h"
 #import "LeftViewController.h"
-#import "SubWeatherController.h"
 #import "WaterfallViewController.h"
-#import "MainTabBarController.h"
+#import "WeatherTabBarController.h"
+#import "WeatherMsgVC.h"
 
 @interface AppDelegate ()
 
@@ -22,30 +22,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    WeatherManager *weatherManager = [WeatherManager sharedManager];
-    NSArray *citys =  [weatherManager.cityArray copy];
-    
-    NSMutableArray *subControllers = [NSMutableArray array];
-    for (NSString *cityId in citys) {
-        SubWeatherController *subController = [[SubWeatherController alloc] init];
-        subController.cityId = cityId;
-        [subControllers addObject:subController];
-    }
-    
     LeftViewController *left = [[LeftViewController alloc] init];
     
-    MainController *weatherMain = [[MainController alloc] initWithLeftViewController:left subViewControllers:subControllers];
-    
+    WeatherMsgVC *weather = [[WeatherMsgVC alloc] init];
     WaterfallViewController *waterfallController = [[WaterfallViewController alloc] init];
     
-    MainTabBarController *tabBarController = [[MainTabBarController alloc] init];
-    tabBarController.viewControllers = @[weatherMain, waterfallController];
+    WeatherTabBarController *weatherTBC = [[WeatherTabBarController alloc] init];
+    weatherTBC.viewControllers = @[weather, waterfallController];
     
+    MainController *mainController = [[MainController alloc] initWithLeftViewController:left centerViewController:weatherTBC];
+    
+    //window
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     [self.window makeKeyAndVisible];
     
-    self.window.rootViewController = tabBarController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    self.window.rootViewController = mainController;
     
     // Override point for customization after application launch.
     return YES;
