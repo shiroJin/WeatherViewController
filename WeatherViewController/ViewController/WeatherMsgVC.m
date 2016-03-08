@@ -96,7 +96,7 @@
     
     //侧滑Btn
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    leftBtn.frame = CGRectMake(10, 32, 20, 20);
+    leftBtn.frame = CGRectMake(10, 34, 30, 30);
     [leftBtn setImage:[UIImage imageNamed:@"hamburger"] forState:UIControlStateNormal];
     [leftBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [leftBtn addTarget:self action:@selector(openAction) forControlEvents:UIControlEventTouchUpInside];
@@ -182,7 +182,18 @@
     self.titleLabel.text = ((WeatherModel *)[self.dataDic objectForKey:[NSString stringWithFormat:@"%ld", index]]).city;
 }
 
-//weatherManager
+#pragma mark - Touch Delegate
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    CGFloat offsetX = [touch locationInView:self.scrollView].x;
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.scrollView resignFirstResponder];
+}
+
+#pragma mark - getter
 - (WeatherManager *)weatherManager {
     if (!_weatherManager) {
         _weatherManager = [WeatherManager sharedManager];

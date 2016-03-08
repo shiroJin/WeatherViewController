@@ -35,6 +35,7 @@
     
     //绘制折线
     CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, 2);
 ////    旋转坐标系
 //    CGContextSaveGState(context);
 //    CGContextScaleCTM(context, 1, -1);
@@ -68,7 +69,6 @@
             CGPathAddLineToPoint(lowPath, NULL, i * kWidth + kStart, kGraphHeight - lowTemp * kGrid);
             CGPathAddLineToPoint(highPath, NULL, i * kWidth + kStart, kGraphHeight - highTemp * kGrid);
         }
-        
         //week
         [history.week drawInRect:CGRectMake(i * kWidth, 280, kWidth, 20) withAttributes:textAttribute];
         //temp

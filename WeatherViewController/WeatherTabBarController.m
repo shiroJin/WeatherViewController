@@ -28,11 +28,11 @@
     self.customBar.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.customBar];
     
-    NSArray *arr = @[@"天气", @"美图"];
+    NSArray *arr = @[@"天气", @"美图", @"步数"];
     
-    for (NSInteger i = 0; i < 2; i++) {
+    for (NSInteger i = 0; i < 3; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake((kScreenWidth / 2) * i, 0, kScreenWidth / 2, 48);
+        btn.frame = CGRectMake((kScreenWidth / 3) * i, 0, kScreenWidth / 3, 48);
         btn.backgroundColor = [UIColor greenColor];
         [btn setTitle:arr[i] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];

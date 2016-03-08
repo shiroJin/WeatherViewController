@@ -64,23 +64,20 @@
 
 //显示侧边栏
 - (void)openLeftView {
-    [self configLeftView];
+    [self addChildViewController:self.leftViewContrller];
+    self.leftViewContrller.view.frame = self.leftView.bounds;
+    [self.leftView addSubview:self.leftViewContrller.view];
     
     [self openAnimation];
     [self.centerView addGestureRecognizer:self.tapGesture];
     [self.view addGestureRecognizer:self.panGesture];
 }
 
+//关闭侧边栏
 - (void)closeLeftView {
     [self closeAnimation];
     [self.centerView removeGestureRecognizer:self.tapGesture];
     [self.view removeGestureRecognizer:self.panGesture];
-}
-
-- (void)configLeftView {
-    [self addChildViewController:self.leftViewContrller];
-    self.leftViewContrller.view.frame = self.leftView.bounds;
-    [self.leftView addSubview:self.leftViewContrller.view];
 }
 
 #pragma mark - 手势事件

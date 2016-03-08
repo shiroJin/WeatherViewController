@@ -12,7 +12,7 @@
 #import "WXRefresh.h"
 #import "GraphCell.h"
 
-#define kToday @"todayCell"
+#define kToday @"todayWeatherCell"
 #define kGraph @"graphCell"
 
 @implementation WeatherTable

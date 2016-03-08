@@ -12,6 +12,7 @@
 #import "WaterfallViewController.h"
 #import "WeatherTabBarController.h"
 #import "WeatherMsgVC.h"
+#import "HealthViewController.h"
 
 @interface AppDelegate ()
 
@@ -26,9 +27,10 @@
     
     WeatherMsgVC *weather = [[WeatherMsgVC alloc] init];
     WaterfallViewController *waterfallController = [[WaterfallViewController alloc] init];
+    HealthViewController *healthVC = [[HealthViewController alloc] init];
     
     WeatherTabBarController *weatherTBC = [[WeatherTabBarController alloc] init];
-    weatherTBC.viewControllers = @[weather, waterfallController];
+    weatherTBC.viewControllers = @[weather, waterfallController, healthVC];
     
     MainController *mainController = [[MainController alloc] initWithLeftViewController:left centerViewController:weatherTBC];
     

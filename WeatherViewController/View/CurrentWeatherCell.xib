@@ -43,8 +43,8 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="102 轻度污染" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuW-xU-MUm">
-                        <rect key="frame" x="13" y="18" width="84" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="102 轻度污染" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuW-xU-MUm">
+                        <rect key="frame" x="13" y="18" width="120" height="17"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -70,6 +70,7 @@
                 <outlet property="aqi" destination="NuW-xU-MUm" id="7eu-Ok-l9I"/>
                 <outlet property="date" destination="1ao-A3-ttY" id="7wE-QY-oRB"/>
                 <outlet property="fengli" destination="S9Q-FZ-Wdx" id="t8t-Fc-rv1"/>
+                <outlet property="forecast" destination="sFu-3d-F4Y" id="apV-U6-cwl"/>
                 <outlet property="temp" destination="Cay-Li-f8d" id="bDw-XZ-yhs"/>
                 <outlet property="type" destination="m2R-0q-iIe" id="gsb-Co-HMf"/>
             </connections>
