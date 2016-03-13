@@ -80,7 +80,7 @@
 #pragma mark - Custom Bar
 
 - (void)createPageControl {
-    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 60, kScreenWidth, 10)];
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 54, kScreenWidth, 10)];
     self.pageControl.numberOfPages = [WeatherManager sharedManager].cityArray.count;
     self.pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     self.pageControl.pageIndicatorTintColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.5];

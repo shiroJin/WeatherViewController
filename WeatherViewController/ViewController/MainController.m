@@ -78,6 +78,7 @@
     [self closeAnimation];
     [self.centerView removeGestureRecognizer:self.tapGesture];
     [self.view removeGestureRecognizer:self.panGesture];
+    self.tabBarController.view.userInteractionEnabled = YES;
 }
 
 #pragma mark - 手势事件
@@ -145,7 +146,7 @@
         self.centerView.frame = centerFrame;
     } completion:^(BOOL finished) {
         //do something else
-//        self.currentViewController = self.leftViewContrller;
+        self.tabBarController.view.userInteractionEnabled = NO;
     }];
 }
 
@@ -159,7 +160,7 @@
         //do something else
         [self.view removeGestureRecognizer:self.panGesture];
         [self.centerView removeGestureRecognizer:self.tapGesture];
-//        self.currentViewController = self.viewControllers[self.currentIndex];
+        self.tabBarController.view.userInteractionEnabled = YES;
     }];
 }
 

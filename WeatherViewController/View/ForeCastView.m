@@ -52,14 +52,14 @@
                                                                                }];
     
     NSString *temp = [NSString stringWithFormat:@"%@-%@", self.forecast.lowtemp, self.forecast.hightemp];
-    [temp drawInRect:CGRectMake(0, 50, 75, 30) withAttributes:@{
+    [temp drawInRect:CGRectMake(0, 50, 60, 30) withAttributes:@{
                                                                  NSFontAttributeName : [UIFont systemFontOfSize:12],
                                                                  NSForegroundColorAttributeName : [UIColor whiteColor],
                                                                  NSParagraphStyleAttributeName : leftParaStyle,
                                                                  }];
     
     NSString *wind = [NSString stringWithFormat:@"%@ %@", self.forecast.fengxiang, self.forecast.fengli];
-    [wind drawInRect:CGRectMake(75, 50, 75, 30) withAttributes:@{
+    [wind drawInRect:CGRectMake(60, 50, 90, 30) withAttributes:@{
                                                                  NSFontAttributeName : [UIFont systemFontOfSize:12],
                                                                  NSForegroundColorAttributeName : [UIColor whiteColor],
                                                                  NSParagraphStyleAttributeName : rightParaStyle,
