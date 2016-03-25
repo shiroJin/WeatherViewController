@@ -17,7 +17,10 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-    NSParameterAssert(self.forecast);
+    if (!self.forecast) {
+        return;
+    }
+    
     NSMutableParagraphStyle *leftParaStyle = [[NSMutableParagraphStyle alloc] init];
     leftParaStyle.alignment = NSTextAlignmentLeft;
     

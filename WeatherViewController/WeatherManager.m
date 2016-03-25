@@ -76,9 +76,6 @@
     
     if (!isSave) {
         [self.cityArray addObject:cityId];
-//        同步数据
-//        [self.userDefaults setObject:self.cityArray forKey:@"citys"];
-//        [self.userDefaults synchronize];
         //发送更新通知
         [[NSNotificationCenter defaultCenter] postNotificationName:@"updateData" object:nil];
     }

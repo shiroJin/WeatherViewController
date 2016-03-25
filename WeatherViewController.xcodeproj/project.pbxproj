@@ -125,6 +125,7 @@
 		8F43772B1C8C6EA900C0119B /* CycleScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F43772A1C8C6EA900C0119B /* CycleScrollerView.m */; };
 		8F43772E1C8C6F1200C0119B /* ForeCastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F43772D1C8C6F1200C0119B /* ForeCastView.m */; };
 		8F4377301C8C6F3100C0119B /* ForecastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F43772F1C8C6F3100C0119B /* ForecastView.xib */; };
+		8F8ECDBE1CA26E3E00A95831 /* TempView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8ECDBD1CA26E3E00A95831 /* TempView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -321,6 +322,8 @@
 		8F43772C1C8C6F1200C0119B /* ForeCastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForeCastView.h; sourceTree = "<group>"; };
 		8F43772D1C8C6F1200C0119B /* ForeCastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForeCastView.m; sourceTree = "<group>"; };
 		8F43772F1C8C6F3100C0119B /* ForecastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastView.xib; sourceTree = "<group>"; };
+		8F8ECDBC1CA26E1F00A95831 /* TempView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TempView.h; sourceTree = "<group>"; };
+		8F8ECDBD1CA26E3E00A95831 /* TempView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -463,6 +466,8 @@
 				8F43772C1C8C6F1200C0119B /* ForeCastView.h */,
 				8F43772D1C8C6F1200C0119B /* ForeCastView.m */,
 				8F43772F1C8C6F3100C0119B /* ForecastView.xib */,
+				8F8ECDBC1CA26E1F00A95831 /* TempView.h */,
+				8F8ECDBD1CA26E3E00A95831 /* TempView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -885,6 +890,7 @@
 				8F4376F51C887D6800C0119B /* MKAnnotationView+WebCache.m in Sources */,
 				8F4375C71C844CD500C0119B /* MainController.m in Sources */,
 				8F31863A1C8EBF3700FD993D /* HealthViewController.m in Sources */,
+				8F8ECDBE1CA26E3E00A95831 /* TempView.m in Sources */,
 				8F4376FA1C887D6800C0119B /* SDWebImageDownloader.m in Sources */,
 				8F4376FE1C887D6800C0119B /* UIButton+WebCache.m in Sources */,
 				8F4375F51C8453F100C0119B /* UIViewController+AppDelegate.m in Sources */,

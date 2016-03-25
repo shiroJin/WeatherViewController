@@ -31,8 +31,9 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    NSParameterAssert(self.weatherModel);
-    
+    if (!self.weatherModel) {
+        return;
+    }
     //绘制折线
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(context, 2);

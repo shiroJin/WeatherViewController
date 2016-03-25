@@ -139,7 +139,7 @@
 #pragma mark - 动画
 
 - (void)openAnimation {
-    [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.7f initialSpringVelocity:0.2f options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.7f initialSpringVelocity:0.4f options:UIViewAnimationOptionCurveLinear animations:^{
         CGRect leftFrame = CGRectMake(0, 0, kLeftLength, kScreenHeight);
         CGRect centerFrame = CGRectMake(kLeftLength, 0, kScreenWidth, kScreenHeight);
         self.leftView.frame = leftFrame;
@@ -151,7 +151,7 @@
 }
 
 - (void)closeAnimation {
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         CGRect leftFrame = CGRectMake(- kLeftLength, 0, kLeftLength, kScreenHeight);
         CGRect centerFrame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
         self.leftView.frame = leftFrame;

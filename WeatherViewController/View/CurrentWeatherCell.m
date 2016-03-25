@@ -8,6 +8,7 @@
 
 #import "CurrentWeatherCell.h"
 #import "ForeCastView.h"
+#import "TempView.h"
 
 @interface CurrentWeatherCell ()
 
@@ -68,7 +69,7 @@
         _aqi.text = [NSString stringWithFormat:@"空气指数:%@", _weatherModel.today.aqi];
         _date.text = _weatherModel.today.date;
         _type.text = _weatherModel.today.type;
-        _temp.text = _weatherModel.today.curTemp;
+        _temp.temp = _weatherModel.today.curTemp;
         _fengli.text = [NSString stringWithFormat:@"风向：%@ 风力：%@", _weatherModel.today.fengxiang, _weatherModel.today.fengli];
         //forecast
         self.tomorrow.forecast = self.weatherModel.forecastArr[0];
