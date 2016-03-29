@@ -90,6 +90,7 @@
 - (void)setTemp:(NSString *)temp {
     _temp = temp;
     self.progressLayer.strokeEnd = ([temp integerValue] + 10) / 50.0f;
+    [self setNeedsDisplay];
 }
 
 
