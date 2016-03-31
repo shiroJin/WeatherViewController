@@ -31,11 +31,6 @@
         if ([manager.userDefaults objectForKey:@"citys"]) {
             manager.cityArray = [[manager.userDefaults objectForKey:@"citys"] mutableCopy];
             
-//            [manager.cityArray removeAllObjects];
-//            [manager.cityArray addObject:@"101210101"];
-//            [manager.cityArray addObject:@"101020100"];
-//            [manager.userDefaults setObject:manager.cityArray forKey:@"citys"];
-            
             for (NSString *cityId in manager.cityArray) {
                 if ([cityId isEqualToString:@"101210101"]) {
                     break;
@@ -45,6 +40,12 @@
         else {
             manager.cityArray = [NSMutableArray array];
             [manager.cityArray addObject:@"101210101"];
+            
+//            [manager.cityArray removeAllObjects];
+//            [manager.cityArray addObject:@"101210101"];
+//            [manager.cityArray addObject:@"101020100"];
+//            [manager.userDefaults setObject:manager.cityArray forKey:@"citys"];
+
         }
         NSLog(@"%@", manager.cityArray);
 

@@ -105,7 +105,7 @@
     
     [_temp drawInRect:CGRectMake(0.293 * RADIUS + LINE_WIDTH, 0.293 * RADIUS + LINE_WIDTH, 1.414 * RADIUS, 1.414 * RADIUS) withAttributes:@{
                                                                                                                                           NSForegroundColorAttributeName : [UIColor whiteColor],
-                                                                                                                                          NSFontAttributeName : [UIFont systemFontOfSize:50],
+                                                                                                                                          NSFontAttributeName : [UIFont systemFontOfSize:45],
                                                                                                                                           NSParagraphStyleAttributeName : paraSytle,
                                                                                                                                           }];
     
