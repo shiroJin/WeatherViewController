@@ -138,4 +138,9 @@
     context = nil;
 }
 
+- (void)setWeatherModel:(WeatherModel *)weatherModel {
+    _weatherModel = weatherModel;
+    [self setNeedsDisplay];
+}
+
 @end

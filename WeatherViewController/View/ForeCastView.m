@@ -69,5 +69,9 @@
                                                                  }];
 }
 
+- (void)setForecast:(ForecastModel *)forecast {
+    _forecast = forecast;
+    [self setNeedsDisplay];
+}
 
 @end

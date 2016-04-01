@@ -9,13 +9,13 @@
 	<key>阴</key>
 	<string>2</string>
 	<key>阵雨</key>
-	<string>6</string>
+	<string>9</string>
 	<key>小雨</key>
 	<string>7</string>
 	<key>中雨</key>
 	<string>8</string>
 	<key>大雨</key>
-	<string>9</string>
+	<string>19</string>
 	<key>暴雨</key>
 	<string>10</string>
 	<key>小雪</key>

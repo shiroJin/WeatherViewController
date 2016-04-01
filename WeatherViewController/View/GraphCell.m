@@ -44,10 +44,8 @@
 }
 
 - (void)setWeatherModel:(WeatherModel *)weatherModel {
-    if (weatherModel) {
-        _weatherModel = weatherModel;
-        self.graphView.weatherModel = weatherModel;
-    }
+    _weatherModel = weatherModel;
+    self.graphView.weatherModel = weatherModel;
 }
 
 @end
